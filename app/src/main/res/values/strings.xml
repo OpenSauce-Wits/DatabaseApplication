@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DatabaseApplication</string>
+    <string name="nothing"></string>
+    <string name="run_query">Run Query</string>
+    <string name="run_update">Run Update</string>
+    <string name="insert_sql">Please Insert an SQL Statement</string>
+</resources>
