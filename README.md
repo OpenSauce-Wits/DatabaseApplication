@@ -3,4 +3,4 @@ This is an android studio project based on mySQL. It contains tests a lecturer m
 
 
 # Bitrise CI
-https://app.bitrise.io/app/e3fb0a0c3f637bb9/status.svg?token=1AZ7htJOKJsw38B0JbSNfQ&branch=master
+[![Build Status](https://app.bitrise.io/app/e3fb0a0c3f637bb9/status.svg?token=1AZ7htJOKJsw38B0JbSNfQ&branch=master)](https://app.bitrise.io/app/e3fb0a0c3f637bb9)
