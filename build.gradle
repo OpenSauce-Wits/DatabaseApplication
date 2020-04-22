@@ -2,7 +2,7 @@
 
 buildscript {
     ext.jacocoVersion = '0.8.4'
-    ext.coverallVersion = '2.8.3'
+    ext.coverallsVersion = '2.8.3'
     repositories {
         google()
         jcenter()
