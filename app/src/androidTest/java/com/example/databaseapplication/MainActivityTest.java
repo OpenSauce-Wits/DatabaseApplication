@@ -60,7 +60,7 @@ public class MainActivityTest {
         closeSoftKeyboard();
         onView(withId(R.id.btnRunUpdate)).perform(click());
         onView(withId(R.id.edtInput)).perform(clearText());
-        onView(withId(R.id.edtInput)).perform(typeText("Insert Into Sentences Values('This is my first sentence!')"));
+        onView(withId(R.id.edtInput)).perform(typeText("Insert Into Sentences Values('This Is My First Sentence!')"));
         closeSoftKeyboard();
         onView(withId(R.id.btnRunUpdate)).perform(click());
         onView(withId(R.id.edtInput)).perform(clearText());
