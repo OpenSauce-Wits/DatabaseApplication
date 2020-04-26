@@ -70,21 +70,21 @@ public class MainActivityTest {
         onView(withId(R.id.txtOutput)).check(matches(withText("This Is My First Sentence!")));
     }
 
-//    @Test
-//    public void multipleEntries(){
-//        onView(withId(R.id.edtInput)).perform(typeText("Delete from Sentences"));
-//        closeSoftKeyboard();
-//        onView(withId(R.id.btnRunUpdate)).perform(click());
-//        onView(withId(R.id.edtInput)).perform(clearText());
-//        onView(withId(R.id.edtInput)).perform(typeText("Insert Into Sentences Values('Boom'),('Boom'),('Boom'),('Boom'),('Boom')"));
-//        closeSoftKeyboard();
-//        onView(withId(R.id.btnRunUpdate)).perform(click());
-//        onView(withId(R.id.edtInput)).perform(clearText());
-//        onView(withId(R.id.edtInput)).perform(typeText("SELECT * FROM Sentences"));
-//        closeSoftKeyboard();
-//        onView(withId(R.id.btnRunQuery)).perform(click());
-//        onView(withId(R.id.txtOutput)).check(matches(withText("Boom\nBoom\nBoom\nBoom\nBoom")));
-//    }
+    @Test
+    public void multipleEntries(){
+        onView(withId(R.id.edtInput)).perform(typeText("Delete from Sentences"));
+        closeSoftKeyboard();
+        onView(withId(R.id.btnRunUpdate)).perform(click());
+        onView(withId(R.id.edtInput)).perform(clearText());
+        onView(withId(R.id.edtInput)).perform(typeText("Insert Into Sentences Values('Boom'),('Boom'),('Boom'),('Boom'),('Boom')"));
+        closeSoftKeyboard();
+        onView(withId(R.id.btnRunUpdate)).perform(click());
+        onView(withId(R.id.edtInput)).perform(clearText());
+        onView(withId(R.id.edtInput)).perform(typeText("SELECT * FROM Sentences"));
+        closeSoftKeyboard();
+        onView(withId(R.id.btnRunQuery)).perform(click());
+        onView(withId(R.id.txtOutput)).check(matches(withText("Boom\nBoom\nBoom\nBoom\nBoom")));
+    }
 
     @Test
     public void testButtonExists(){
