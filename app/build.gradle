@@ -2,33 +2,34 @@ apply plugin: 'com.android.application'
 apply plugin: 'jacoco'
 apply plugin: 'com.github.kt3k.coveralls'
 
-jacoco{
+jacoco {
     toolVersion = "$jacocoVersion"
 }
 
-tasks.withType(Test){
-    jacoco.includeNoLocationClasses=true
+tasks.withType( Test) {
+    jacoco.includeNoLocationClasses = true
     jacoco.excludes = ['jdk.internal.*']
-    testLogging{
-        exceptionFormat = 'full'
+	testLogging {
+		exceptionFormat = 'full'
+	}
+}
+
+task jacocoTestReport( type: JacocoReport, dependsOn: [ 'testDebugUnitTest', 'createDebugCoverageReport']) {
+    //define exclusion files in coverage reports
+    def fileFilter = [ '**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
+    def debugTree = fileTree ( dir: "$project.buildDir/intermediates/javac/debug", excludes: fileFilter)
+    def mainSrc = "$project.projectDir/src/main/java"
+
+    sourceDirectories = files([ mainSrc])
+    classDirectories = files([ debugTree])
+    executionData = fileTree( dir: project.buildDir, includes: [ '**/*.exec', '**/**/**/**/*.ec'])
+
+    reports {
+       xml.enabled = true
+       html.enabled = true
     }
 }
 
-task jacocoTestReport( type: JacocoReport, dependsOn: [ 'testDebugUnitTest', 'createDebugCoverageReport']){
-  //define exlusion files in coverage reports
-  def fileFilter = [ '**/R.class','**/R$*.class','**/BuildConfig.*','**/Manifest*.*','**/*Test*.*','android/**/*.*']
-  def debugTree = fileTree(dir: "$project.buildDir/intermediates/javac/debug",excludes:fileFilter)
-  def mainSrc = "$project.projectDir/src/main/java"
-
-  sourceDirectories = files([mainSrc])
-  classDirectories = files([debugTree])
-  executionData = fileTree(dir:project.buildDir,includes:['**/*.exec','**/**/**/**/*.ec'])
-
-  reports{
-    xml.enabled = true
-    html.enabled = true
-  }
-}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -44,6 +45,7 @@ android {
         debug{
           testCoverageEnabled true
         }
+        
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
