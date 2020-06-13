@@ -1,0 +1,18 @@
+STUDENT ZIP:
+app/src/main
+
+LECTURE ZIP:
+app/build.gradle
+
+app/src/androidTest/java/com/example/databaseapplication/ExampleInstrumentedTest.java
+app/src/androidTest/java/com/example/databaseapplication/MainActivityInstrumentedTest.java
+
+app/src/test/java/com/example/databaseapplication/ExampleUnitTest.java
+
+gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+gradlew
+gradlew.bat
+settings.gradle
+build.gradle
+gradle.properties
